@@ -15,24 +15,33 @@ add_executable(CitySmart main.cpp)
 # ===============================
 # Platform-specific Raylib setup
 # ===============================
-if(WIN32)
-    # Windows MSVC
-    set(RAYLIB_PATH "C:/raylib_path")
-    set(RAYLIB_INCLUDE_DIR "${RAYLIB_PATH}/include")
-    set(RAYLIB_LIBRARY "${RAYLIB_PATH}/lib/raylib.lib")
-    set(RAYLIB_DLL "${RAYLIB_PATH}/lib/raylib.dll")
+if (WIN32)
 
-    target_include_directories(CitySmart PRIVATE ${RAYLIB_INCLUDE_DIR})
-    target_link_libraries(CitySmart PRIVATE ${RAYLIB_LIBRARY} opengl32 gdi32 winmm)
+    if(MSVC)
+        message(STATUS "Using MSVC")
+        set(RAYLIB_PATH "C:/raylib_path")
+        set(RAYLIB_LIB "${RAYLIB_PATH}/lib/raylib.lib")
+        set(RAYLIB_DLL "${RAYLIB_PATH}/lib/raylib.dll")
 
-    # Copy DLL to build folder automatically
-    add_custom_command(TARGET CitySmart POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${RAYLIB_DLL}
-        $<TARGET_FILE_DIR:CitySmart>)
+        target_include_directories(CitySmart PRIVATE "${RAYLIB_PATH}/include")
+        target_link_libraries(CitySmart PRIVATE ${RAYLIB_LIB} opengl32 gdi32 winmm)
+
+        add_custom_command(TARGET CitySmart POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            ${RAYLIB_DLL}
+            $<TARGET_FILE_DIR:CitySmart>)
+    
+    elseif(MINGW)
+        message(STATUS "Using MinGW")
+        set(RAYLIB_PATH "C:/raylib_mingw")
+        set(RAYLIB_LIB "${RAYLIB_PATH}/lib/libraylib.a")
+
+        target_include_directories(CitySmart PRIVATE "${RAYLIB_PATH}/include")
+        target_link_libraries(CitySmart PRIVATE ${RAYLIB_LIB} opengl32 gdi32 winmm)
+    endif()
 
 elseif(APPLE)
-    # macOS
+    # macOS (Homebrew)
     find_package(raylib REQUIRED)
     target_link_libraries(CitySmart PRIVATE raylib)
 
@@ -40,4 +49,5 @@ elseif(UNIX)
     # Linux
     find_package(raylib REQUIRED)
     target_link_libraries(CitySmart PRIVATE raylib)
+
 endif()
