@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.31)
 project(CitySmart VERSION 0.1.0 LANGUAGES C CXX)
 
 # ===============================
+# Use C++17
+# ===============================
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# ===============================
 # Create executable
 # ===============================
 add_executable(CitySmart main.cpp)
