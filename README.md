@@ -4,7 +4,7 @@ A 3D simulation of a smart city traffic network built with **C++** and **Raylib*
 
 ## 🎥 Demo
 
-> To ADD
+>**[▶️ Click here to watch the simulation demo (Download Video)](Demo.mp4)**
 
 ## ✨ Key Functionalities
 
