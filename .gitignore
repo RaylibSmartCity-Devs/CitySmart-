@@ -1,41 +1,22 @@
-# Prerequisites
-*.d
+# Ignore build and temporary folders
+build/
+out/
+vcpkg_installed/
+.vs/
+.vscode/
+x64/
+Debug/
+Release/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+# Ignore compiled object files and executables
 *.exe
-*.out
-*.app
+*.obj
+*.pdb
+*.ilk
+*.user
+*.suo
+*.db
 
-# debug information files
-*.dwo
+# BUT keep these important folders (force them to be tracked if needed)
+!assets/
+!raylib-lib/
