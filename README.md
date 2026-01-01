@@ -30,6 +30,26 @@ DEMO VID TO ADD
 * **Camera Controls:** Fully interactive 3D orbit camera.
 
 ---
+## 🚀 Future Updates Roadmap
+* **Pedestrian AI:** Adding walking citizens on sidewalks and crosswalks.
+* **Day/Night Cycle:** Dynamic lighting and street lamps turning on at night.
+* **More Vehicle Types:** Adding buses, trucks, and motorcycles with unique physics.
+* **Smart Overtaking:** Allow cars to change lanes to overtake slower traffic.
+
+## 🐛 Known Issues / Bugs
+* **Collision Physics:** Very rare edge cases where cars might clip into each other at high speeds in dense intersections.
+* **Pathfinding:** If a destination is unreachable (blocked by walls), the vehicle may stop indefinitely.
+
+## ⚠️ Troubleshooting
+
+**Textures not loading? (Black or White models)**
+If you build the project and the simulation looks untextured or black, the executable cannot find the assets.
+
+**Fix:**
+1.  Go to your project folder.
+2.  Copy IMGS in the `assets` folder.
+3.  Paste it inside your build folder where the `.exe` is located (e.g.`build/Release/`).
+---
 
 ## 🎮 Controls
 
@@ -67,12 +87,12 @@ DEMO VID TO ADD
 3.  **Compile the Project**
     ```bash
     cmake ..
-    cmake --build .
+    cmake --build . --config Release
     ```
 
 4.  **Run the Simulation**
-    * **Windows:** `.\Debug\CitySmart.exe` (or just `.\CitySmart.exe`)
-    * **Linux/Mac:** `./CitySmart`
+    * **Windows:** Go to `.build\Release\CitySmart.exe` and click the CitySmart.exe
+    * **Linux/Mac:** Run `./CitySmart`
 
 ---
 
@@ -88,5 +108,8 @@ DEMO VID TO ADD
 
 ## 👥 Authors
 
-* **Ayoub Chentouf** - *Lead Developer*
-* *(Add your team members here)*
+* **Ayoub Chentouf**
+* **Ayoub hmamouchi**
+* **Aya lmasoudi**
+* **Charaf Eddine Ifrinchaou**
+* **Kerouad Loubna**
