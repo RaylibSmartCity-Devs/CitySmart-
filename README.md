@@ -114,8 +114,8 @@ If you build the project and the simulation looks untextured or black, the execu
 
 ## 👥 Authors
 
-* **Ayoub Chentouf**
-* **Ayoub Hmamouchi**
-* **Aya Lmasoudi**
-* **Charaf Eddine Ifrinchaou**
-* **Kerouad Loubna**
+- **Ayoub Chentouf** — Pathfinding
+- **Ayoub Hmamouchi** — Traffic management
+- **Aya Lmasoudi** — Map design
+- **Charaf Eddine Ifrinchaou** — Traffic-light system 
+- **Kerouad Loubna** — Vehicles
